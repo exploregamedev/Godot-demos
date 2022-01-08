@@ -38,4 +38,5 @@ func _get_preview_control() -> Control:
 	var preview_color = color
 	preview_color.a = .5
 	preview.color = preview_color
+	preview.set_rotation(.1) # in readians
 	return preview
