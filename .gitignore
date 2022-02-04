@@ -2,8 +2,12 @@
 /.vscode/
 .DS_Store
 
-   
+
 # Godot-specific ignores
+
+# gd4
+.godot/
+
 .import/
 export.cfg
 export_presets.cfg

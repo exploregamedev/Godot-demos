@@ -8,25 +8,10 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "ColorRect",
-"class": "Draggable",
-"language": "GDScript",
-"path": "res://demo-final/draggable_final.gd"
-} ]
-_global_script_class_icons={
-"Draggable": ""
-}
-
 [application]
 
-config/name="Ytube-Drag and drop part 1"
-run/main_scene="res://demo-initial/drag_and_drop_demo_initial.tscn"
+config/name="Drag And Drop Toy"
 config/icon="res://icon.png"
-
-[debug]
-
-settings/fps/force_fps=60
 
 [physics]
 
