@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://control_drag_and_drop/game_piece.gd" type="Script" id=2]
+
+[node name="GamePiece" type="TextureRect"]
+margin_right = 64.0
+margin_bottom = 64.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

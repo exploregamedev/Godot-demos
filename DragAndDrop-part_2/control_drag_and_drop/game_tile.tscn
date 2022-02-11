@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://control_drag_and_drop/game_tile.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.94902, 0.941176, 0.941176, 1 )
+
+[node name="GameTile" type="PanelContainer"]
+margin_top = 193.0
+margin_right = 64.0
+margin_bottom = 257.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+script = ExtResource( 1 )
