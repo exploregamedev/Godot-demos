@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hwitted8lrkb"]
+
+[ext_resource type="Script" path="res://annotations/player.gd" id="1_embuw"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource( "1_embuw" )
