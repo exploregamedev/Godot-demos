@@ -2,7 +2,7 @@ extends TextureRect
 
 
 signal item_dropped_on_target(draggable)
-var draggable: PackedScene = preload("res://control_drag_and_drop/game_piece.tscn")
+var draggable: PackedScene = preload("res://control_drag_n_drop/game_piece.tscn")
 var holds_game_piece: bool = false
 
 func _ready() -> void:

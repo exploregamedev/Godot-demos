@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://simple_node2d/table_top.gd" type="Script" id=2]
+
+[node name="TableTop" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BoardPosition" type="Position2D" parent="."]
+position = Vector2( 648, 168 )
+
+[node name="X_PiecePosition" type="Position2D" parent="."]
+position = Vector2( 248, 144 )
+
+[node name="O_PiecePosition" type="Position2D" parent="."]
+position = Vector2( 248, 240 )
