@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://control_drag_n_drop/table_top.gd" type="Script" id=1]
+[ext_resource path="res://assets/FjallaOne-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
 
 [node name="TableTop" type="PanelContainer"]
 anchor_right = 1.0
@@ -13,30 +18,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VLayout" type="VBoxContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+custom_constants/separation = 40
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="VLayout"]
+margin_right = 1024.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+text = "Control node drag and drop"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VLayout"]
+margin_top = 116.0
+margin_right = 1024.0
+margin_bottom = 116.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VLayout/HBoxContainer"]
 margin_right = 510.0
-margin_bottom = 600.0
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VLayout/HBoxContainer/CenterContainer"]
 margin_left = 255.0
-margin_top = 300.0
 margin_right = 255.0
-margin_bottom = 300.0
 custom_constants/separation = 30
 
-[node name="GameBoardGrid" type="CenterContainer" parent="HBoxContainer"]
+[node name="GameBoardGrid" type="CenterContainer" parent="VLayout/HBoxContainer"]
 margin_left = 514.0
 margin_right = 1024.0
-margin_bottom = 600.0
 size_flags_horizontal = 3
 
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer/GameBoardGrid"]
+[node name="GridContainer" type="GridContainer" parent="VLayout/HBoxContainer/GameBoardGrid"]
 margin_left = 255.0
-margin_top = 300.0
 margin_right = 255.0
-margin_bottom = 300.0

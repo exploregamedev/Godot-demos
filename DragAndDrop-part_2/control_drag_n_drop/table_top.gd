@@ -5,8 +5,8 @@ export(Color) var background_color = Color.black
 
 var game_tile_scene: PackedScene = preload("res://control_drag_n_drop/game_tile.tscn")
 var game_piece_scene: PackedScene = preload("res://control_drag_n_drop/game_piece.tscn")
-onready var _grid: GridContainer = $HBoxContainer/GameBoardGrid/GridContainer
-onready var _game_piece_holder = $HBoxContainer/CenterContainer/VBoxContainer
+onready var _grid: GridContainer = $VLayout/HBoxContainer/GameBoardGrid/GridContainer
+onready var _game_piece_holder = $VLayout/HBoxContainer/CenterContainer/VBoxContainer
 
 
 func _ready() -> void:
