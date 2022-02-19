@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "GameTile",
 "language": "GDScript",
-"path": "res://simple_node2d/tile.gd"
+"path": "res://simple_node2d/game_tile.gd"
 } ]
 _global_script_class_icons={
 "GamePiece": "",

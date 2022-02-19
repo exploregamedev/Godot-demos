@@ -1,17 +1,17 @@
 extends Node2D
 class_name GameTile
 
+export(int) var tile_size: int = 100
+export(Color) var background_color = Color.white
+
+var held_piece_type: String = ""
 var row_index
 var column_index
-export(Color) var default_color
-export(Color) var highlight_color
-var tile_size: int = 100
-var held_piece_type: String = ""
 
 
 func _ready() -> void:
+    $Background.color = background_color
     $Background.mouse_filter = Control.MOUSE_FILTER_PASS
-    $Background.color = default_color
     $Background.rect_size = Vector2(tile_size, tile_size)
 
 
@@ -24,10 +24,3 @@ func attach_piece(piece: GamePiece):
 func holding_piece() -> bool:
     return held_piece_type != ""
 
-
-func highlight_on():
-    $Background.color = highlight_color
-
-
-func highlight_off():
-    $Background.color = default_color

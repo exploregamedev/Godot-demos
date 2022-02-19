@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://simple_node2d/tile.gd" type="Script" id=1]
+[ext_resource path="res://simple_node2d/game_tile.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 1.0
+radius = 4.0
 
 [node name="Tile" type="Area2D"]
 script = ExtResource( 1 )
-default_color = Color( 0.537255, 0.815686, 0.380392, 1 )
-highlight_color = Color( 0.560784, 0.678431, 0.588235, 1 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_left = -48.0

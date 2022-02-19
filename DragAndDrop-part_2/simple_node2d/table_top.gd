@@ -1,14 +1,15 @@
 extends Node2D
 
-onready var game_tile_scene: PackedScene = preload("res://simple_node2d/tile.tscn")
-onready var game_piece_scene: PackedScene = preload("res://simple_node2d/game_piece.tscn")
+export(int) var board_size: int = 3
+export(Color) var background_color = Color.black
 
+var game_tile_scene: PackedScene = preload("res://simple_node2d/game_tile.tscn")
+var game_piece_scene: PackedScene = preload("res://simple_node2d/game_piece.tscn")
 var _game_piece_over_tile: GameTile
-
-export(int) var board_size: int = 4
 
 
 func _ready() -> void:
+    VisualServer.set_default_clear_color(background_color)
     _spawn_new_game_piece("X")
     _spawn_new_game_piece("O")
     _build_game_board()
@@ -29,12 +30,10 @@ func _on_game_piece_dropped(piece: GamePiece):
 func _on_game_tile_area_entered(_area, tile: GameTile):
     if tile.holding_piece():
         return
-    tile.highlight_on()
     _game_piece_over_tile = tile
 
 
 func _on_game_tile_area_exited(_area, tile: GameTile):
-    tile.highlight_off()
     _game_piece_over_tile = null
 
 

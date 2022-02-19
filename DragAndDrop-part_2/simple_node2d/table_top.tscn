@@ -6,10 +6,10 @@
 script = ExtResource( 2 )
 
 [node name="BoardPosition" type="Position2D" parent="."]
-position = Vector2( 648, 168 )
+position = Vector2( 512, 128 )
 
 [node name="X_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 248, 144 )
+position = Vector2( 192, 128 )
 
 [node name="O_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 248, 240 )
+position = Vector2( 192, 256 )

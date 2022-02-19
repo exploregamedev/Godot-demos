@@ -6,16 +6,16 @@
 bg_color = Color( 0.94902, 0.941176, 0.941176, 1 )
 
 [node name="GameTile" type="PanelContainer"]
-margin_top = 193.0
-margin_right = 64.0
-margin_bottom = 257.0
-rect_min_size = Vector2( 64, 64 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -896.0
+margin_bottom = -472.0
 custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 64.0
-margin_bottom = 64.0
-script = ExtResource( 1 )
+margin_right = 128.0
+margin_bottom = 128.0

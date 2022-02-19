@@ -16,11 +16,9 @@ func _process(_delta: float) -> void:
         _attach_to_mouse()
 
 
-func deactivate():
-    $CollisionShape2D.disabled = true
-
 func get_texture():
     return $Sprite.texture
+
 
 func set_type(x_or_o: String):
     type = x_or_o.to_lower()
@@ -29,9 +27,6 @@ func set_type(x_or_o: String):
 
 func _attach_to_mouse():
     global_position = get_global_mouse_position()
-
-func tile_beneath():
-    return null
 
 
 func _on_GamePiece_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
