@@ -40,15 +40,17 @@ margin_bottom = 23.0
 custom_constants/separation = 20
 
 [node name="EntrySource" type="Label" parent="Padding/VLayout/HBoxContainer"]
-margin_right = 99.0
+margin_right = 600.0
 margin_bottom = 23.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "GamePiece"
 
 [node name="EntryOccurenceCount" type="Label" parent="Padding/VLayout/HBoxContainer"]
-margin_left = 119.0
-margin_right = 119.0
+margin_left = 620.0
+margin_right = 1220.0
 margin_bottom = 23.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,6 +60,8 @@ __meta__ = {
 margin_top = 27.0
 margin_right = 1220.0
 margin_bottom = 50.0
+rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "This is an entry"
+autowrap = true

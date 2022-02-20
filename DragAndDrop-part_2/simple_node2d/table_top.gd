@@ -63,6 +63,7 @@ func _build_game_board():
             tile.position = tile_position
             tile.row_index = row_number
             tile.column_index = column_number
+            ConsoleLogger.log("TableTop", "Spawned new %s" % tile)
             add_child(tile)
 
 
@@ -77,6 +78,6 @@ func _spawn_new_game_piece(x_or_o: String) -> void:
     var game_piece: GamePiece = game_piece_scene.instance()
     game_piece.connect("game_piece_dropped", self, "_on_game_piece_dropped")
     game_piece.position = get_node("%s_PiecePosition" % x_or_o.to_upper()).position
-    game_piece.set_type(x_or_o)
+    game_piece.type = x_or_o
     add_child(game_piece)
     ConsoleLogger.log("TableTop", "Spawned new %s in pieces holder" % game_piece)

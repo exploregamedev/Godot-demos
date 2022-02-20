@@ -7,25 +7,35 @@
 font_path = "res://assets/FjallaOne-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
+size = 40
 font_data = SubResource( 2 )
 
 [node name="TableTop" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="BoardPosition" type="Position2D" parent="."]
-position = Vector2( 448, 384 )
+position = Vector2( 760, 200 )
 
 [node name="X_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 128, 384 )
+position = Vector2( 634, 258 )
 
 [node name="O_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 128, 512 )
+position = Vector2( 632, 352 )
+
+[node name="PiecesHolder" type="ColorRect" parent="."]
+margin_left = 592.0
+margin_top = 216.0
+margin_right = 680.0
+margin_bottom = 400.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
-margin_top = 16.0
-margin_right = 1016.0
-margin_bottom = 92.0
+margin_left = 512.0
+margin_right = 1224.0
+margin_bottom = 76.0
 custom_fonts/font = SubResource( 1 )
 text = "Node2D drag and drop"
 align = 1
@@ -37,14 +47,5 @@ __meta__ = {
 
 [node name="OutputLog" parent="CanvasLayer" instance=ExtResource( 1 )]
 anchor_bottom = 0.0
-margin_bottom = 264.0
-
-[node name="PiecesHolder" type="ColorRect" parent="."]
-margin_left = 64.0
-margin_top = 320.0
-margin_right = 192.0
-margin_bottom = 576.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_right = -716.0
+margin_bottom = 720.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://control_drag_n_drop/table_top.gd" type="Script" id=1]
+[ext_resource path="res://output_log/logging_console.tscn" type="PackedScene" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -8,8 +9,11 @@
 font_path = "res://assets/FjallaOne-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-size = 60
+size = 40
 font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
 
 [node name="TableTop" type="PanelContainer"]
 anchor_right = 1.0
@@ -20,37 +24,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VLayout" type="VBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="HLayout" type="HBoxContainer" parent="."]
+margin_right = 1228.0
+margin_bottom = 720.0
+
+[node name="OutputLog" parent="HLayout" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 524.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+
+[node name="VLayout" type="VBoxContainer" parent="HLayout"]
+margin_left = 528.0
+margin_right = 1228.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 700, 0 )
 custom_constants/separation = 40
 
-[node name="Label" type="Label" parent="VLayout"]
-margin_right = 1024.0
-margin_bottom = 76.0
+[node name="Label" type="Label" parent="HLayout/VLayout"]
+margin_right = 700.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 3 )
 text = "Control node drag and drop"
 align = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VLayout"]
-margin_top = 116.0
-margin_right = 1024.0
-margin_bottom = 116.0
+[node name="HBoxContainer" type="HBoxContainer" parent="HLayout/VLayout"]
+margin_top = 91.0
+margin_right = 700.0
+margin_bottom = 91.0
+custom_constants/separation = 50
+alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="VLayout/HBoxContainer"]
-margin_right = 510.0
-size_flags_horizontal = 3
+[node name="PanelContainer" type="PanelContainer" parent="HLayout/VLayout/HBoxContainer"]
+margin_left = 325.0
+margin_right = 325.0
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VLayout/HBoxContainer/CenterContainer"]
-margin_left = 255.0
-margin_right = 255.0
+[node name="GamePiecesHolder" type="VBoxContainer" parent="HLayout/VLayout/HBoxContainer/PanelContainer"]
 custom_constants/separation = 30
 
-[node name="GameBoardGrid" type="CenterContainer" parent="VLayout/HBoxContainer"]
-margin_left = 514.0
-margin_right = 1024.0
-size_flags_horizontal = 3
-
-[node name="GridContainer" type="GridContainer" parent="VLayout/HBoxContainer/GameBoardGrid"]
-margin_left = 255.0
-margin_right = 255.0
+[node name="GridContainer" type="GridContainer" parent="HLayout/VLayout/HBoxContainer"]
+margin_left = 375.0
+margin_right = 375.0
