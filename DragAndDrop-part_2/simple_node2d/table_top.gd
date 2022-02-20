@@ -17,28 +17,34 @@ func _ready() -> void:
 
 func _on_game_piece_dropped(piece: GamePiece):
     if _game_piece_over_tile:
-        print("[%s]Piece dropped on tile[%s, %s]" %
-            [piece.type, _game_piece_over_tile.row_index, _game_piece_over_tile.column_index])
+        ConsoleLogger.log(
+            "TableTop", "Recieved signal[game_piece_dropped] %s dropped on %s" %
+            [piece, _game_piece_over_tile])
         _game_piece_over_tile.attach_piece(piece)
         _game_piece_over_tile = null
         _spawn_new_game_piece(piece.type)
     else:
-        print("Piece dropped, but NOT over tile")
+        ConsoleLogger.log("TableTop", "%s dropped, but NOT over tile.\nReturning to piece holder" % piece)
         _return_piece_to_holder(piece)
 
 
-func _on_game_tile_area_entered(_area, tile: GameTile):
+func _on_game_tile_area_entered(game_piece_area, tile: GameTile):
+    ConsoleLogger.log(
+        "TableTop", "Recieved signal[area_entered]. %s entered %s" %
+        [game_piece_area, tile])
     if tile.holding_piece():
         return
     _game_piece_over_tile = tile
 
 
-func _on_game_tile_area_exited(_area, tile: GameTile):
+func _on_game_tile_area_exited(game_piece_area, tile: GameTile):
+    ConsoleLogger.log(
+        "TableTop", "Recieved signal[area_exited]. %s exited %s" %
+        [game_piece_area, tile])
     _game_piece_over_tile = null
 
 
 func _return_piece_to_holder(piece: GamePiece):
-    #@TODO tween this movement
     piece.position = get_node("%s_PiecePosition" % piece.type.to_upper()).position
 
 
@@ -73,3 +79,4 @@ func _spawn_new_game_piece(x_or_o: String) -> void:
     game_piece.position = get_node("%s_PiecePosition" % x_or_o.to_upper()).position
     game_piece.set_type(x_or_o)
     add_child(game_piece)
+    ConsoleLogger.log("TableTop", "Spawned new %s in pieces holder" % game_piece)

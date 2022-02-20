@@ -1,23 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/FjallaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://output_log/logging_console.tscn" type="PackedScene" id=1]
 [ext_resource path="res://simple_node2d/table_top.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/FjallaOne-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 1 )
+font_data = SubResource( 2 )
 
 [node name="TableTop" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="BoardPosition" type="Position2D" parent="."]
-position = Vector2( 448, 192 )
+position = Vector2( 448, 384 )
 
 [node name="X_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 192, 192 )
+position = Vector2( 128, 384 )
 
 [node name="O_PiecePosition" type="Position2D" parent="."]
-position = Vector2( 192, 320 )
+position = Vector2( 128, 512 )
 
 [node name="Label" type="Label" parent="."]
 margin_top = 16.0
@@ -26,6 +29,22 @@ margin_bottom = 92.0
 custom_fonts/font = SubResource( 1 )
 text = "Node2D drag and drop"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OutputLog" parent="CanvasLayer" instance=ExtResource( 1 )]
+anchor_bottom = 0.0
+margin_bottom = 264.0
+
+[node name="PiecesHolder" type="ColorRect" parent="."]
+margin_left = 64.0
+margin_top = 320.0
+margin_right = 192.0
+margin_bottom = 576.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

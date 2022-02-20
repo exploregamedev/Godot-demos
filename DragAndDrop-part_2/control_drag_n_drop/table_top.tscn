@@ -1,13 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://control_drag_n_drop/table_top.gd" type="Script" id=1]
-[ext_resource path="res://assets/FjallaOne-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/FjallaOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
 size = 60
-font_data = ExtResource( 2 )
+font_data = SubResource( 2 )
 
 [node name="TableTop" type="PanelContainer"]
 anchor_right = 1.0
@@ -26,7 +28,7 @@ custom_constants/separation = 40
 [node name="Label" type="Label" parent="VLayout"]
 margin_right = 1024.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Control node drag and drop"
 align = 1
 

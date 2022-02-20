@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://output_log/log_entry.gd" type="Script" id=1]
+[ext_resource path="res://assets/ubuntu-18.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ShareTechMono-18.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.207843, 0.196078, 0.196078, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="OutputEntry" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Padding" type="MarginContainer" parent="."]
+margin_right = 1228.0
+margin_bottom = 720.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="VLayout" type="VBoxContainer" parent="Padding"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1224.0
+margin_bottom = 716.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Padding/VLayout"]
+margin_right = 1220.0
+margin_bottom = 23.0
+custom_constants/separation = 20
+
+[node name="EntrySource" type="Label" parent="Padding/VLayout/HBoxContainer"]
+margin_right = 99.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "GamePiece"
+
+[node name="EntryOccurenceCount" type="Label" parent="Padding/VLayout/HBoxContainer"]
+margin_left = 119.0
+margin_right = 119.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EntryText" type="Label" parent="Padding/VLayout"]
+margin_top = 27.0
+margin_right = 1220.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "This is an entry"

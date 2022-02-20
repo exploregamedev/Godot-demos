@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://output_log/logging_console.gd" type="Script" id=1]
+[ext_resource path="res://assets/FjallaOne-Regular-16.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.207843, 0.196078, 0.196078, 1 )
+
+[node name="OutputLog" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Padding" type="MarginContainer" parent="Container"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1221.0
+margin_bottom = 713.0
+
+[node name="VLayout" type="VBoxContainer" parent="Container/Padding"]
+margin_right = 1214.0
+margin_bottom = 706.0
+
+[node name="Label" type="Label" parent="Container/Padding/VLayout"]
+margin_right = 1214.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+text = "Output log"
+align = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Container/Padding/VLayout"]
+margin_top = 25.0
+margin_right = 1214.0
+margin_bottom = 706.0
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 3 )
+scroll_horizontal_enabled = false
+
+[node name="OutputHistory" type="VBoxContainer" parent="Container/Padding/VLayout/Scroll"]
+custom_constants/separation = 10

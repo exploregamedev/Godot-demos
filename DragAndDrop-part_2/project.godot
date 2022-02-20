@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "GameTile",
 "language": "GDScript",
 "path": "res://simple_node2d/game_tile.gd"
+}, {
+"base": "PanelContainer",
+"class": "LogEntry",
+"language": "GDScript",
+"path": "res://output_log/log_entry.gd"
+}, {
+"base": "Control",
+"class": "LoggingConsole",
+"language": "GDScript",
+"path": "res://output_log/logging_console.gd"
 } ]
 _global_script_class_icons={
 "GamePiece": "",
-"GameTile": ""
+"GameTile": "",
+"LogEntry": "",
+"LoggingConsole": ""
 }
 
 [application]
@@ -29,15 +41,29 @@ _global_script_class_icons={
 config/name="Drag And Drop Toy"
 run/main_scene="res://control_drag_n_drop/table_top.tscn"
 
+[autoload]
+
+ConsoleLogger="*res://output_log/console_logger.gd"
+
 [debug]
 
 settings/fps/force_fps=60
+
+[display]
+
+window/size/width=1228
+window/size/height=720
 
 [input]
 
 click={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+console_marker={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":77,"unicode":0,"echo":false,"script":null)
  ]
 }
 

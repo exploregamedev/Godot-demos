@@ -32,9 +32,15 @@ func _attach_to_mouse():
 func _on_GamePiece_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
     # Mouse is over the game piece and left click was made
     if Input.is_action_pressed("click"):
+        ConsoleLogger.log(
+            "GamePiece", "%s Recived signal[input_event] Input action was 'click' pressed" % self)
         _dragging = true
     elif Input.is_action_just_released("click"):
+        ConsoleLogger.log(
+            "GamePiece", "%s Recived signal[input_event] Input action was 'click' released" % self)
         _dragging = false
+        ConsoleLogger.log("GamePiece", "%s emiting signal[game_piece_dropped]" % self)
         emit_signal("game_piece_dropped", self)
 
-
+func _to_string() -> String:
+    return "GamePiece[%s]" % type.to_upper()

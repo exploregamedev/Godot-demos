@@ -16,6 +16,7 @@ func _ready() -> void:
 
 
 func attach_piece(piece: GamePiece):
+    ConsoleLogger.log("GameTile", "%s attached to %s" % [piece, self])
     $XorO.texture = piece.get_texture()
     held_piece_type = piece.type
     piece.queue_free()
@@ -23,4 +24,7 @@ func attach_piece(piece: GamePiece):
 
 func holding_piece() -> bool:
     return held_piece_type != ""
+
+func _to_string() -> String:
+    return "GameTile [col:%s, row:%s]" % [column_index, row_index]
 
