@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _build_game_board() -> void:
     _grid.columns = board_size
-    # The grid container will manage the number of rows for us, We do
+    # The GridContainer will manage the number of rows for us, We do
     #   this nested for loop so each tile knows its col/row indexes
     for row_index in board_size:
         for col_index in board_size:
@@ -29,11 +29,15 @@ func _spawn_new_game_tile(column_number: int, row_number: int) -> Node:
     var tile = game_tile_scene.instance()
     tile.column_index = column_number
     tile.row_index = row_number
-    ConsoleLogger.log("TableTop", "Spawned new %s" % tile)
+    ConsoleLogger.log(self.to_string(), "Spawned new %s" % tile)
     return tile
 
 
 func _spawn_new_game_piece(x_or_o: String) -> void:
     var game_piece = game_piece_scene.instance()
     game_piece.type = x_or_o
+    ConsoleLogger.log(self.to_string(), "Spawned new %s" % game_piece)
     _game_piece_holder.add_child(game_piece)
+
+func _to_string() -> String:
+    return "TableTop"

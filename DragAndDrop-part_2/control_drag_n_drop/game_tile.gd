@@ -21,12 +21,12 @@ func can_drop_data(_position: Vector2, game_piece) -> bool:
     var can_drop: bool = game_piece is Node and game_piece.is_in_group("DRAGGABLE")
     if can_drop:
         game_piece
-    ConsoleLogger.log("GameTile", "%s is over %s (can_drop_data has run)" % [game_piece, self])
+    ConsoleLogger.log(self.to_string(), "%s is over me (can_drop_data has run)" % game_piece)
     return can_drop
 
 
 func drop_data(_position: Vector2, game_piece: TextureRect) -> void:
-    ConsoleLogger.log("GameTile", "%s had been dropped on %s" % [game_piece, self])
+    ConsoleLogger.log(self.to_string(), "%s had been dropped on me (drop_data has run)" % game_piece)
     _texture.texture = game_piece.texture
     holds_game_piece = true
     _center_piece()

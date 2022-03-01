@@ -26,21 +26,27 @@ func set_type(x_or_o: String):
 
 
 func _attach_to_mouse():
+    ConsoleLogger.log(self.to_string(), "Attached to mouse")
     global_position = get_global_mouse_position()
 
 
-func _on_GamePiece_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+#func _input(event: InputEvent) -> void:
+# _input would not work in this case as ALL game pieces in scene would be called
+#    Rather we attach to the input_event signal of the CollisionObject2D for each individual
+#    instance of GamePiece.
+func _on_GamePiece_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
     # Mouse is over the game piece and left click was made
-    if Input.is_action_pressed("click"):
+    if Input.is_action_just_pressed("click"):
         ConsoleLogger.log(
-            "GamePiece", "%s Recived signal[input_event] Input action was 'click' pressed" % self)
+            self.to_string(), "Recived signal[input_event] Input action was 'click' pressed")
         _dragging = true
     elif Input.is_action_just_released("click"):
         ConsoleLogger.log(
-            "GamePiece", "%s Recived signal[input_event] Input action was 'click' released" % self)
+            self.to_string(), "Recived signal[input_event] Input action was 'click' released")
         _dragging = false
-        ConsoleLogger.log("GamePiece", "%s emiting signal[game_piece_dropped]" % self)
+        ConsoleLogger.log(self.to_string(), "Emiting signal[game_piece_dropped]")
         emit_signal("game_piece_dropped", self)
+
 
 func _to_string() -> String:
     return "GamePiece[%s]" % type.to_upper()

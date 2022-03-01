@@ -6,12 +6,12 @@ func _ready() -> void:
     add_to_group("DRAGGABLE")
 
 func get_drag_data(_position: Vector2):
-    ConsoleLogger.log("GamePiece", "Drag starting for %s (get_drag_data has run)" % self)
+    ConsoleLogger.log(self.to_string(), "Drag starting (get_drag_data has run)")
     set_drag_preview(_get_preview_control())
     return self
 
 func _get_preview_control() -> Control:
-    ConsoleLogger.log("GamePiece", "Attaching game piece preview to mouse pointer\n(set_drag_preview has been called)")
+    ConsoleLogger.log(self.to_string(), "Attaching game piece preview to mouse pointer\n(set_drag_preview has been called)")
     var drag_preview = TextureRect.new()
     drag_preview.rect_size = Vector2(texture.get_width(),texture.get_height())
     drag_preview.texture = texture
