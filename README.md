@@ -7,7 +7,7 @@
 ## Simple quiz game template for godot, just a start ;)
 
 
-## Find me online
+## Find me online (ExploreGameDev)
 
 [Twitter](https://twitter.com/exploregamedev)
 
