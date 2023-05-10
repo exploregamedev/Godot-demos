@@ -5,7 +5,7 @@
 
 
 ## Simple quiz game template for godot, just a start ;)
-<img width="100" alt="square-social-teal" src="img/preview.png" >
+<img alt="square-social-teal" src="img/preview.png" >
 
 
 ## Find me online (ExploreGameDev)
