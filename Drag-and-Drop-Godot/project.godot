@@ -9,37 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
-"class": "GamePiece",
+"base": "ColorRect",
+"class": "Draggable",
 "language": "GDScript",
-"path": "res://simple_node2d/game_piece.gd"
-}, {
-"base": "Node2D",
-"class": "GameTile",
-"language": "GDScript",
-"path": "res://simple_node2d/game_tile.gd"
-}, {
-"base": "PanelContainer",
-"class": "LogEntry",
-"language": "GDScript",
-"path": "res://output_log/log_entry.gd"
-}, {
-"base": "Control",
-"class": "LoggingConsole",
-"language": "GDScript",
-"path": "res://output_log/logging_console.gd"
+"path": "res://demo-final/draggable_final.gd"
 } ]
 _global_script_class_icons={
-"GamePiece": "",
-"GameTile": "",
-"LogEntry": "",
-"LoggingConsole": ""
+"Draggable": ""
 }
 
 [application]
 
 config/name="Drag And Drop Toy"
-run/main_scene="res://control_drag_n_drop/table_top.tscn"
+run/main_scene="res://demo-final/drag_and_drop_demo_final.tscn"
 
 [autoload]
 
